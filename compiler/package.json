@@ -1,0 +1,35 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "##Another gulp starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoKleman/gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheoKleman/gulp/issues"
+  },
+  "homepage": "https://github.com/TheoKleman/gulp#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.11.1",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-webpack": "^1.5.0"
+  },
+  "dependencies": {
+    "component-emitter": "^1.2.1",
+    "gsap": "^1.19.0",
+    "zepto-modules": "^1.0.1"
+  }
+}
