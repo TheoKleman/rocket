@@ -7,11 +7,11 @@ module.exports =
 		},
         "home": {
             "route": "/",
-            "class": require("pages/views/Home")
+            "class": require("pages/templates/Home")
         },
 		"about": {
 			"route": "/about",
-			"class": require("pages/views/About")
+			"class": require("pages/templates/About")
 		}
 	}
 };
