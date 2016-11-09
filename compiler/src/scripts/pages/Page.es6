@@ -31,7 +31,7 @@ export default class Page extends Emitter
         }
     }
 
-    init(autoInitEvents)
+    init()
     {
         console.log("%cinit page-"+ this._pageTemplate +"-"+ this.id, 'color: #55c6da; font-size: 13px');
 
@@ -48,14 +48,6 @@ export default class Page extends Emitter
             autoAlpha: 0,
             y: 5,
         })
-
-        if (autoInitEvents)
-            this._initEvents();
-    }
-
-    _initEvents()
-    {
-
     }
 
     // Methods

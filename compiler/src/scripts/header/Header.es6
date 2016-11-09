@@ -33,8 +33,9 @@ export default class Header extends Emitter
 
     show()
     {
+        console.log('show');
         TweenMax.to(this._$dom, .35, {
-            height: 100
+            height: 40
         })
         TweenMax.to(this._$dom, .35, {
             autoAlpha: 1,
@@ -47,9 +48,10 @@ export default class Header extends Emitter
 
     hide()
     {
+        console.log('hide');
         TweenMax.to(this._$dom, .35, {
             autoAlpha: 0,
-            y: -100
+            y: -40
         })
         TweenMax.to(this._$dom, .35, {
             height: 0,

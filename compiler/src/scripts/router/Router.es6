@@ -113,7 +113,7 @@ export default class Router extends Emitter
             this._title = $newDom.filter('title')[0].innerHTML;
 
             if (slug === '')
-                slug = 'prehome';
+                slug = 'home';
 
             // Instantiate new page
             let PageClass;
@@ -146,7 +146,7 @@ export default class Router extends Emitter
                 this._title = this._$template.filter('title')[0].innerHTML;
 
                 if (slug === '')
-                    slug = 'prehome';
+                    slug = 'home';
 
                 // Instantiate new page
                 let PageClass;
@@ -225,6 +225,9 @@ export default class Router extends Emitter
 
             // Instantiate new page
             let PageClass;
+
+            if (newPageSlug === '')
+                newPageSlug = 'home';
 
             if (window.sitemap.pages[newPageSlug]) {
                 PageClass = window.sitemap.pages[newPageSlug].class;
