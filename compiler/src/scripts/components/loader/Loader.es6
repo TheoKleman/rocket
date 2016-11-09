@@ -44,11 +44,20 @@ export default class Loader
                 ease: Power1.easeInOut,
                 onComplete: () => {
                     if (callback) {
+                        this.destroy();
                         callback();
                     }
                 }
             }),
             "start+=0.65"
         )
+    }
+
+    // Redraw
+    //-----------------------------------------------------o
+
+    destroy()
+    {
+        this._$dom.remove();
     }
 }
