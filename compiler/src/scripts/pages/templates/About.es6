@@ -13,7 +13,7 @@ export default class About extends Page
     {
         super.init();
 
-        Page.header.show();
+        // Page.header.show();
 
         // Some selectors
         // this._$profilePicture = this._$TEappContainer.find('#profilePicture');

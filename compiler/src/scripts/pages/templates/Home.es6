@@ -13,7 +13,7 @@ export default class Home extends Page
     {
         super.init();
 
-        Page.header.hide();
+        // Page.header.hide();
 
         // Some selectors
         // this._$row1 = this._$TEappContainer.find('#row1');
@@ -27,7 +27,7 @@ export default class Home extends Page
     _showAnimations()
     {
         super._showAnimations();
-
+        
         // Your custom animations
     }
 

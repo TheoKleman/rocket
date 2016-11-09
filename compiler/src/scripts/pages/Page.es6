@@ -12,6 +12,7 @@ export default class Page extends Emitter
         super();
 
         this._pageTemplate = "default";
+        this._isEntryPage = false;
 
         // Response DOM
         this._$template = $template;
@@ -50,6 +51,19 @@ export default class Page extends Emitter
         })
     }
 
+    // Getters & Setters
+    //-----------------------------------------------------o
+
+    get isEntryPage()
+    {
+        return this._isEntryPage;
+    }
+
+    set isEntryPage(bool)
+    {
+        this._isEntryPage = bool;
+    }
+
     // Methods
     //-----------------------------------------------------o
 
@@ -63,21 +77,6 @@ export default class Page extends Emitter
     _showAnimations()
     {
         TweenMax.to(this._$pageContent, .25, {
-            autoAlpha: 1,
-            y: 0
-        })
-    }
-
-    showInstantly()
-    {
-        console.log("%cshow instantly page-"+ this._pageTemplate +"-"+ this.id, 'color: #6cda55; font-size: 13px');
-
-        this._showInstantlyAnimations();
-    }
-
-    _showInstantlyAnimations()
-    {
-        TweenMax.set(this._$pageContent, {
             autoAlpha: 1,
             y: 0
         })
@@ -100,23 +99,6 @@ export default class Page extends Emitter
                 if (callback) {
                     callback();
                 }
-            }
-        })
-    }
-
-    reloadDomAfterFormSubmit($form)
-    {
-        let payload = $form.serialize();
-
-        $.ajax({
-            type: 'POST',
-            url: window.location.href,
-            data: payload,
-            success: (data) => {
-                this.emit('reloadDom', data);
-            },
-            error: () => {
-                console.log("error");
             }
         })
     }

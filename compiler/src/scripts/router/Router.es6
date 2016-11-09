@@ -37,6 +37,7 @@ export default class Router extends Emitter
         }
 
         this._page = new PageClass.default(this._$html, this._$appContainer.children());
+        this._page.isEntryPage = true;
         this._page.init();
 
         setTimeout(() => {
@@ -56,9 +57,7 @@ export default class Router extends Emitter
 
     _initPageEvents()
     {
-        this._page
-            .on('reloadDom', this.reloadTemplate.bind(this))
-            .on('updateState', this.updateState.bind(this))
+        this._page.on('updateState', this.updateState.bind(this))
     }
 
     // Methods
@@ -95,81 +94,6 @@ export default class Router extends Emitter
     {
         if (this.couldStateChange)
             this._onStateChange();
-    }
-
-    reloadTemplate(newDom)
-    {
-        this._previousPage = this._page;
-
-        let slug = window.location.pathname.split('/')[1]
-
-        if (newDom) {
-            let $newDom = $(newDom.toString());
-
-            // Page content to append
-            this._$content = $newDom.find('.application-container').children();
-
-            // Page title
-            this._title = $newDom.filter('title')[0].innerHTML;
-
-            if (slug === '')
-                slug = 'home';
-
-            // Instantiate new page
-            let PageClass;
-
-            if (window.sitemap.pages[slug]) {
-                PageClass = window.sitemap.pages[slug].class;
-            } else {
-                PageClass = window.sitemap.pages["default"].class;
-            }
-
-            this._page = new PageClass.default($newDom, this._$content);
-            this.resize();
-
-            // Set document title
-            document.title = this._title
-
-            // Init & show new reloaded template
-            this._previousPage.destroy();
-            this._page.init();
-            this._initPageEvents();
-            this._page.showInstantly();
-        } else {
-            // Get reloaded template
-            this.loadTemplate(slug).then((response) => {
-                this._$template = $(response.toString());
-                // Page content to append
-                this._$content = this._$template.find('.application-container').children();
-
-                // Page title
-                this._title = this._$template.filter('title')[0].innerHTML;
-
-                if (slug === '')
-                    slug = 'home';
-
-                // Instantiate new page
-                let PageClass;
-
-                if (window.sitemap.pages[slug]) {
-                    PageClass = window.sitemap.pages[slug].class;
-                } else {
-                    PageClass = window.sitemap.pages["default"].class;
-                }
-
-                this._page = new PageClass.default(this._$template, this._$content);
-                this.resize();
-
-                // Set document title
-                document.title = this._title
-
-                // Init & show new reloaded template
-                this._previousPage.destroy();
-                this._page.init();
-                this._initPageEvents();
-                this._page.showInstantly();
-            });
-        }
     }
 
     // Redraw

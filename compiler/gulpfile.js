@@ -9,7 +9,7 @@ var config = require('./config/general.config')
 
 gulp.task('scripts', function () {
 	console.log("task scripts");
-	
+
 	return gulp
 		.src(config.scripts.inputPath + '/' + config.scripts.entry)
 		.pipe(webpack( require('./config/webpack.config.js') ))
