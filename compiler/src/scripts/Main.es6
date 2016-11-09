@@ -1,6 +1,7 @@
 import $ from "zepto-modules";
 
 import Loader from "components/loader/Loader";
+import Page from "pages/Page";
 import Router from "router/Router";
 
 class Main
@@ -35,7 +36,8 @@ class Main
 		// First view loaded
 		this._router.on('firstViewLoaded', () => {
 			this._loader.hide(() => {
-				this._router.showCurrentPage();
+				this._router.currentPage.show();
+				Page.header.show();
 			});
 		})
 	}

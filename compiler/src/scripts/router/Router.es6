@@ -44,7 +44,7 @@ export default class Router extends Emitter
             this._initEvents();
             this._initPageEvents();
             this.emit('firstViewLoaded');
-        }, 0)
+        }, 500)
 
     }
 
@@ -95,9 +95,12 @@ export default class Router extends Emitter
             this._onStateChange();
     }
 
-    showCurrentPage()
+    // Getters & Setters
+	//-----------------------------------------------------o
+
+    get currentPage()
     {
-        this._page.show();
+        return this._page;
     }
 
     // Redraw

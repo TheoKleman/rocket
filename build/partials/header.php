@@ -11,7 +11,7 @@
         <meta name="description" content="Description du site" />
 
         <!-- FAVICON -->
-        <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.jpg" type="image/jpg">
+        <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.png" type="image/png">
 
         <!-- CSS -->
         <link href="<?php echo $app->baseUrl() ?>css/main.css" rel="stylesheet">
@@ -62,11 +62,15 @@
             </div>
 
             <header class="c-header">
+                <h1>
+                    <a href="<?php echo $app->urlFor('home'); ?>">
+                        Rocket
+                    </a>
+                </h1>
                 <ul>
-                    <li><a href="<?php echo $app->urlFor('home'); ?>">home</a></li>
-                    <li><a href="<?php echo $app->urlFor('about'); ?>">about</a></li>
-                    <li><a target="_blank" href="">view source on github</a></li>
-                    <li><a target="_blank" href="https://twitter.com/Theo_KlMan">@theo_klman</a></li>
+                    <li><a href="<?php echo $app->urlFor('about'); ?>">About this project</a></li>
+                    <li><a target="_blank" href="">View source on Github</a></li>
+                    <li><a target="_blank" href="https://twitter.com/Theo_KlMan">Follow me on twitter</a></li>
                 </ul>
             </header>
 

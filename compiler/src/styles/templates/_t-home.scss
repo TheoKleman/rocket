@@ -1,5 +1,17 @@
 #template-home {
-    .page-content {
-        
+    .page {
+        &__header {
+            position: relative;
+            height: calc(100vh - 120px);
+
+            h1 {
+                position: absolute;
+                left: 0;
+                bottom: 10px;
+                font-size: 80px;
+                line-height: 100px;
+                margin: 0;
+            }
+        }
     }
 }
