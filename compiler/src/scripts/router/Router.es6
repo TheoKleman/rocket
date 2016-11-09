@@ -44,7 +44,7 @@ export default class Router extends Emitter
             this._initEvents();
             this._initPageEvents();
             this.emit('firstViewLoaded');
-        }, 500)
+        }, 800)
 
     }
 

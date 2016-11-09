@@ -17,7 +17,7 @@
         <link href="<?php echo $app->baseUrl() ?>css/main.css" rel="stylesheet">
     </head>
     <body>
-        <div class="l-container"> <!-- do not delete this node -->
+        <div class="app-wrapper"> <!-- do not delete this node -->
             <div class="c-loader">
                 <div class="c-loader__content">
                     <h1>
@@ -27,6 +27,7 @@
                         Another ES6 starter made to do good shit.
                     </span>
                 </div>
+                <div class="c-loader__after"></div>
             </div>
 
             <header class="c-header">

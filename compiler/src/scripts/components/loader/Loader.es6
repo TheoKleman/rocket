@@ -8,6 +8,7 @@ export default class Loader
     {
         this._$dom = $dom;
         this._$content = this._$dom.find('.c-loader__content');
+        this._$after = this._$dom.find('.c-loader__after');
 
         this._init();
     }
@@ -24,37 +25,30 @@ export default class Loader
     {
         let timelime = new TimelineMax();
         timelime.add(
-            TweenMax.to(this._$content, .85, {
-                x: this._wWidth/1.3,
+            TweenMax.to(this._$after, .7, {
+                width: this._wWidth,
+                ease: Power4.easeIn,
+            }),
+            "start"
+        )
+        timelime.add(
+            TweenMax.to(this._$content, .7, {
+                x: - this._wWidth/4,
                 ease: Power4.easeIn
             }),
             "start"
         )
         timelime.add(
-            TweenMax.to(this._$dom, .85, {
+            TweenMax.to(this._$dom, .25, {
                 x: - this._wWidth,
-                ease: Power4.easeIn,
+                ease: Power1.easeInOut,
                 onComplete: () => {
                     if (callback) {
                         callback();
                     }
                 }
             }),
-            "start"
+            "start+=0.65"
         )
-
-        // TweenMax.to(this._$content, .25, {
-        //     scale: 2,
-        //     ease: Quart.easeOut
-        // })
-        // TweenMax.to(this._$dom, .25, {
-        //     autoAlpha: 0,
-        //     ease: Quart.easeOut,
-        //     onComplete: () => {
-        //         if (callback) {
-        //             callback();
-        //         }
-        //     }
-        // })
     }
 }
