@@ -14,12 +14,12 @@ export default class Page extends Emitter
         this._pageTemplate = "default";
         this._isEntryPage = false;
 
-        // Response DOM
-        this._$template = $template;
-        this._$content = $content;
-        this._$AJAXheader = this._$template.find('.c-header');
+        // AJAX response DOM
+        this._$AJAXLoadedTemplate = $template;
+        this._$AJAXLoadedContent = $content;
+        this._$AJAXLoadedHeader = this._$AJAXLoadedTemplate.find('.c-header');
 
-        // PHP execution DOM
+        // Initial PHP execution DOM
         this._$execPHPbody = $('body');
         this._$execPHPappContainer = $('.application-container');
 		this._$execPHPheader = $('.c-header');
@@ -40,7 +40,7 @@ export default class Page extends Emitter
         this._$execPHPbody.attr('id', 'template-'+ this._pageTemplate);
 
         // Append application content
-        this._$execPHPappContainer.append(this._$content);
+        this._$execPHPappContainer.append(this._$AJAXLoadedContent);
 
         // First show
         this._$pageContent = this._$execPHPappContainer.find('.page-content');
@@ -76,6 +76,7 @@ export default class Page extends Emitter
 
     _showAnimations()
     {
+        // Default show animations
         TweenMax.to(this._$pageContent, .25, {
             autoAlpha: 1,
             y: 0
@@ -91,6 +92,7 @@ export default class Page extends Emitter
 
     _hideAnimations(callback)
     {
+        // Default hide animations
         TweenMax.to(this._$pageContent, .25, {
             autoAlpha: 0,
             y: 5,

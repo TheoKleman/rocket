@@ -41,7 +41,6 @@ export default class Router extends Emitter
         this._page.init();
 
         setTimeout(() => {
-            this._page.show();
             this._initEvents();
             this._initPageEvents();
             this.emit('firstViewLoaded');
@@ -94,6 +93,11 @@ export default class Router extends Emitter
     {
         if (this.couldStateChange)
             this._onStateChange();
+    }
+
+    showCurrentPage()
+    {
+        this._page.show();
     }
 
     // Redraw

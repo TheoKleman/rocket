@@ -1,5 +1,6 @@
 import $ from "zepto-modules";
 
+import Loader from "components/loader/Loader";
 import Router from "router/Router";
 
 class Main
@@ -17,6 +18,9 @@ class Main
 
 	_init()
 	{
+		// Init loader
+		this._loader = new Loader($('body .c-loader'));
+
 		// Init page manager
 		this._router = new Router($('html'), $('body .application-container'));
 
@@ -30,7 +34,9 @@ class Main
 
 		// First view loaded
 		this._router.on('firstViewLoaded', () => {
-			// END LOADER
+			this._loader.hide(() => {
+				this._router.showCurrentPage();
+			});
 		})
 	}
 

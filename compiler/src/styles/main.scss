@@ -1,32 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+// Vendors
+@import "vendor/reset";
 
+// Partials
+@import "partials/fonts";
+@import "partials/mixins";
+@import "partials/colors";
+@import "partials/responsive";
+@import "partials/root";
 
-body {
-    background: #131313;
-    font-family: 'Lato', sans-serif;
-    color: #FFF;
-
-    a {
-        color: rgb(205, 224, 138);
-        text-decoration: none;
-    }
-
-    ul {
-        padding-left: 0;
-        list-style-type: none;
-        height: 40px;
-
-        li {
-            float: left;
-            height: 40px;
-            line-height: 40px;
-            padding: 0 20px;
-
-            a {
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-}
+// Components
+@import "components/c-loader";
