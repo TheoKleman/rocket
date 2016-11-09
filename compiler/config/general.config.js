@@ -12,7 +12,7 @@ module.exports = {
 		outputPath: '../build/css'
 	},
 	browserSync: {
-		proxy: "monkey.js",
+		proxy: "rocket.js",
 		open: false,
 		notify: false,
 		https: false,

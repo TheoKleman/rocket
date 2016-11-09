@@ -4,28 +4,22 @@ body {
     background: $dark2;
     font-family: 'Lato', sans-serif;
     color: $light;
+    height: 100vh;
+
+    h1 {
+        font-family: 'Geomanist';
+    }
 
     a {
         color: $purpleDark;
         text-decoration: none;
     }
 
-    ul {
-        padding-left: 0;
-        list-style-type: none;
-        height: 40px;
-
-        li {
-            float: left;
-            height: 40px;
-            line-height: 40px;
-            padding: 0 20px;
-
-            a {
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
+    > .app-wrapper {
+        width: 100%;
+        min-height: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        border: 15px solid $black;
     }
 }

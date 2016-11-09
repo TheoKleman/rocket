@@ -11,7 +11,7 @@
         <meta name="description" content="Description du site" />
 
         <!-- FAVICON -->
-        <!-- <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.png" type="image/png"> -->
+        <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.jpg" type="image/jpg">
 
         <!-- CSS -->
         <link href="<?php echo $app->baseUrl() ?>css/main.css" rel="stylesheet">
@@ -54,7 +54,7 @@
                             Rocket
                         </h1>
                         <span>
-                            Another ES6 starter made to do good shit.
+                            loading...
                         </span>
                     </div>
                 </div>
@@ -63,8 +63,10 @@
 
             <header class="c-header">
                 <ul>
-                    <li><a href="<?php echo $app->urlFor('home'); ?>">Home</a></li>
-                    <li><a href="<?php echo $app->urlFor('about'); ?>">About</a></li>
+                    <li><a href="<?php echo $app->urlFor('home'); ?>">home</a></li>
+                    <li><a href="<?php echo $app->urlFor('about'); ?>">about</a></li>
+                    <li><a target="_blank" href="">view source on github</a></li>
+                    <li><a target="_blank" href="https://twitter.com/Theo_KlMan">@theo_klman</a></li>
                 </ul>
             </header>
 
