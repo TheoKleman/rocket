@@ -7,4 +7,6 @@
 
 # Todo
 
-* Load images
+* Preload images
+* Optimize router and sitemap
+* Switch to Lumen
