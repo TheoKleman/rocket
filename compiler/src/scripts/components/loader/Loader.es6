@@ -7,7 +7,8 @@ export default class Loader
     constructor($dom)
     {
         this._$dom = $dom;
-        this._$content = this._$dom.find('.c-loader__content');
+        this._$rocket = this._$dom.find('.c-loader__content__logo');
+        this._$text = this._$dom.find('.c-loader__content__text');
         this._$after = this._$dom.find('.c-loader__after');
 
         this._init();
@@ -15,8 +16,13 @@ export default class Loader
 
     _init()
     {
-        this._wWidth = $(window).width();
+        this._wHeight = $(window).height();
+
+        TweenMax.set(this._$text, {
+            x: -70,
+        })
     }
+
 
     // Methods
     //-----------------------------------------------------o
@@ -24,23 +30,55 @@ export default class Loader
     hide(callback)
     {
         let timelime = new TimelineMax();
+
+        // Text translate right
         timelime.add(
-            TweenMax.to(this._$after, .7, {
-                width: this._wWidth,
-                ease: Power4.easeIn,
+            TweenMax.to(this._$text, .5, {
+                x: 0,
+                ease: Power2.easeInOut
             }),
             "start"
         )
+        // Rocket fade in
         timelime.add(
-            TweenMax.to(this._$content, .7, {
-                x: - this._wWidth/4,
+            TweenMax.to(this._$rocket, .25, {
+                autoAlpha: 1,
+                ease: Power2.easeInOut
+            }),
+            "start+=0.5"
+        )
+
+        // Rocket launch
+        timelime.add(
+            TweenMax.to(this._$rocket, .6, {
+                y: - (this._wHeight/2 + 100),
                 ease: Power4.easeIn
             }),
-            "start"
+            "start+=0.85"
         )
+
+        // Text translate up
         timelime.add(
-            TweenMax.to(this._$dom, .25, {
-                x: - this._wWidth,
+            TweenMax.to(this._$text, .6, {
+                y: - this._wHeight/2.5,
+                ease: Power4.easeIn
+            }),
+            "start+=0.85"
+        )
+
+        // After height
+        timelime.add(
+            TweenMax.to(this._$after, .6, {
+                height: this._wHeight,
+                ease: Power4.easeIn,
+            }),
+            "start+=0.85"
+        )
+
+        // Loader wrapper translate up
+        timelime.add(
+            TweenMax.to(this._$dom, .3, {
+                y: - this._wHeight,
                 ease: Power1.easeInOut,
                 onComplete: () => {
                     if (callback) {
@@ -49,7 +87,7 @@ export default class Loader
                     }
                 }
             }),
-            "start+=0.65"
+            "start+=1.3"
         )
     }
 
