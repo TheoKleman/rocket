@@ -10,6 +10,7 @@ class Main
 	{
 		// sitemap
 		window.sitemap = this._sitemap = require("./router/sitemap");
+		window.$ = $;
 
 		this._init();
 	}

@@ -1,5 +1,3 @@
-import $ from "zepto-modules";
-
 import gsap from "gsap/src/minified/TweenMax.min";
 
 export default class Loader

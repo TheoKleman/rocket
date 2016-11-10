@@ -1,5 +1,3 @@
-import $ from "zepto-modules";
-
 import Emitter from "component-emitter/index";
 import gsap from "gsap/src/minified/TweenMax.min";
 

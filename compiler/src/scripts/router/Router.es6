@@ -1,5 +1,3 @@
-import $ from "zepto-modules";
-
 import Emitter from "component-emitter/index";
 
 export default class Router extends Emitter

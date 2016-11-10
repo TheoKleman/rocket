@@ -10,3 +10,4 @@
 * Preload images
 * Optimize router and sitemap
 * Switch to Lumen
+* Do great docs
