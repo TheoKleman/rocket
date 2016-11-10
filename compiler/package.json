@@ -30,6 +30,7 @@
   "dependencies": {
     "component-emitter": "^1.2.1",
     "gsap": "^1.19.0",
+    "three": "^0.82.1",
     "zepto-modules": "^1.0.1"
   }
 }

@@ -8,7 +8,7 @@
         <!-- TITLE -->
         <title>Rocket - Demo</title>
 
-        <meta name="description" content="Description du site" />
+        <meta name="description" content="Rocket - Another ES6 Starter made to do good shit!" />
 
         <!-- FAVICON -->
         <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.png" type="image/png">
@@ -17,6 +17,7 @@
         <link href="<?php echo $app->baseUrl() ?>css/main.css" rel="stylesheet">
     </head>
     <body>
+        <div class="app-border"></div>
         <div class="app-wrapper"> <!-- do not delete this node -->
             <div class="c-loader">
                 <div class="c-loader__content">
@@ -69,7 +70,7 @@
                 </h1>
                 <ul>
                     <li><a href="<?php echo $app->urlFor('about'); ?>">About this project</a></li>
-                    <li><a target="_blank" href="">View source on Github</a></li>
+                    <li><a target="_blank" href="https://github.com/TheoKleman/rocket">View source on Github</a></li>
                     <li><a target="_blank" href="https://twitter.com/Theo_KlMan">Follow me on twitter</a></li>
                 </ul>
             </header>

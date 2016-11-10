@@ -1,6 +1,9 @@
 import $ from "zepto-modules";
 
+import * as THREE from "three/build/three.min";
+
 import Loader from "components/loader/Loader";
+import SmokeGL from "components/smokeGL/SmokeGL";
 import Page from "pages/Page";
 import Router from "router/Router";
 
@@ -10,6 +13,7 @@ class Main
 	{
 		// sitemap
 		window.sitemap = this._sitemap = require("./router/sitemap");
+		window.THREE = THREE;
 		window.$ = $;
 
 		this._init();
@@ -25,6 +29,9 @@ class Main
 
 		// Init page manager
 		this._router = new Router($('html'), $('body .application-container'));
+
+		// Init SmokeGL
+		this._smokeGL = new SmokeGL($('body .c-glsmoke'))
 
 		this._initEvents();
 	}
@@ -52,6 +59,7 @@ class Main
 	update()
 	{
 		this._router.update();
+		this._smokeGL.update();
 	}
 
     // Handlers
@@ -63,6 +71,7 @@ class Main
 	_onResize()
 	{
 		this._router.resize();
+		this._smokeGL.resize();
 	}
 }
 
