@@ -39,13 +39,13 @@ class Main
 	_initEvents()
 	{
 		$(window).on('resize', this._onResize.bind(this));
-		this._onResize();
 
 		// First view loaded
 		this._router.on('firstViewLoaded', () => {
 			this._loader.hide(() => {
 				this._router.currentPage.show();
 				Page.header.show();
+				this._smokeGL.show();
 			});
 		})
 	}

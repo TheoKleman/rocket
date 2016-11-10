@@ -1,6 +1,9 @@
 export default class SmokeGL {
     constructor($dom)
     {
+        this._isLoaded = false;
+        this._smokeParticlesOpacity = 0;
+
         this._$dom = $dom;
         this._dWidth = this._$dom.width();
         this._dHeight = this._$dom.height();
@@ -31,20 +34,34 @@ export default class SmokeGL {
         this._scene.add(this._light);
 
         // Smoke geometry
-        this._smokeTexture = THREE.ImageUtils.loadTexture('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png');
+        let textureLoader = new THREE.TextureLoader();
+        this._smokeTexture = textureLoader.load('../img/smoke.png')
         this._smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffba8e, map: this._smokeTexture, transparent: true});
         this._smokeGeometry = new THREE.PlaneGeometry(300,300);
         this._smokeParticles = [];
 
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 90; i++) {
             let particle = new THREE.Mesh(this._smokeGeometry, this._smokeMaterial);
             particle.position.set(Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 1000 - 100);
             particle.rotation.z = Math.random() * 360;
+            particle.material.opacity = 0;
             this._scene.add(particle);
             this._smokeParticles.push(particle);
         }
 
         this._$dom[0].appendChild(this._renderer.domElement);
+        this._isLoaded = true;
+    }
+
+    // Methods
+	//-----------------------------------------------------o
+
+    show()
+    {
+        TweenMax.to(this, 1.8, {
+            _smokeParticlesOpacity: .6,
+            ease: Power2.easeInOut
+        })
     }
 
     // Redraw
@@ -53,15 +70,20 @@ export default class SmokeGL {
     update()
     {
         // Evolve smoke
-        var delta = this._clock.getDelta();
-        var sp = this._smokeParticles.length;
+        if (this._isLoaded) {
+            var delta = this._clock.getDelta();
+            var sp = this._smokeParticles.length;
 
-        while (sp--) {
-            this._smokeParticles[sp].rotation.z += (delta * 0.2);
+            while (sp--) {
+                this._smokeParticles[sp].rotation.z += (delta * 0.1);
+
+                if (this._smokeParticles[sp].material.opacity != this._smokeParticlesOpacity)
+                    this._smokeParticles[sp].material.opacity = this._smokeParticlesOpacity;
+            }
+
+            // Rerender
+            this._renderer.render(this._scene, this._camera);
         }
-
-        // Rerender
-        this._renderer.render(this._scene, this._camera);
     }
 
     resize()
@@ -69,10 +91,17 @@ export default class SmokeGL {
         this._dWidth = this._$dom.width();
         this._dHeight = this._$dom.height();
 
-        // TODO: Destroy and re init
-        
-        // this._renderer.setSize(this._dWidth, this._dHeight);
-        //
-        // this._camera.aspect = this._dWidth/this._dHeight;
+        if (this._isLoaded) {
+            this.destroy(true)
+        }
+    }
+
+    destroy(andInit)
+    {
+        this._$dom.find('canvas').remove();
+
+        if (andInit) {
+            this._init();
+        }
     }
 }
