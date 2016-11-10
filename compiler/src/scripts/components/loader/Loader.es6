@@ -15,10 +15,6 @@ export default class Loader
     _init()
     {
         this._wHeight = $(window).height();
-
-        TweenMax.set(this._$text, {
-            x: -70,
-        })
     }
 
 

@@ -40,7 +40,7 @@ export default class SmokeGL {
         this._smokeGeometry = new THREE.PlaneGeometry(300,300);
         this._smokeParticles = [];
 
-        for (var i = 0; i < 90; i++) {
+        for (var i = 0; i < 120; i++) {
             let particle = new THREE.Mesh(this._smokeGeometry, this._smokeMaterial);
             particle.position.set(Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 1000 - 100);
             particle.rotation.z = Math.random() * 360;
@@ -58,7 +58,7 @@ export default class SmokeGL {
 
     show()
     {
-        TweenMax.to(this, 1.8, {
+        TweenMax.to(this, 1.5, {
             _smokeParticlesOpacity: .6,
             ease: Power2.easeInOut
         })
