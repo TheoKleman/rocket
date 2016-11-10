@@ -13,12 +13,20 @@ export default class Home extends Page
     {
         super.init();
 
-        // Page.header.hide();
-
         // Some selectors
-        // this._$row1 = this._$TEappContainer.find('#row1');
-        // this._$row2 = this._$TEappContainer.find('#row2');
-        // this._$row3 = this._$TEappContainer.find('#row3');
+        this._$mainTitle = this._$execPHPappContainer.find('#main-title');
+        this._$mainTitleLine1 = this._$mainTitle.find('.line1');
+        this._$mainTitleLine2 = this._$mainTitle.find('.line2');
+
+        // Set tweens
+        TweenMax.set(this._$mainTitleLine1, {
+            width: 0,
+            x: -15,
+        })
+        TweenMax.set(this._$mainTitleLine2, {
+            width: 0,
+            x: -20
+        })
     }
 
     // Methods
@@ -27,8 +35,27 @@ export default class Home extends Page
     _showAnimations()
     {
         super._showAnimations();
-        
+
         // Your custom animations
+        let timelime = new TimelineMax();
+
+        // Main title
+        timelime.add(
+            TweenMax.to(this._$mainTitleLine1, .5, {
+                x: 0,
+                width: "100%",
+                ease: Power2.easeInOut
+            }),
+            "start"
+        )
+        timelime.add(
+            TweenMax.to(this._$mainTitleLine2, .7, {
+                x: 0,
+                width: "100%",
+                ease: Power4.easeOut
+            }),
+            "start+=0.3"
+        )
     }
 
     _hideAnimations(callback)

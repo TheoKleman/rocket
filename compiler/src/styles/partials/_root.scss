@@ -13,6 +13,7 @@ body {
     a {
         color: $primaryDark;
         text-decoration: none;
+        outline: 0;
     }
 
     > .app-wrapper {

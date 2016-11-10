@@ -11,6 +11,23 @@
                 font-size: 80px;
                 line-height: 100px;
                 margin: 0;
+
+                > span {
+                    display: block;
+                    overflow: hidden;
+                    word-break: break-all;
+                    white-space: nowrap;
+                    height: 100px;
+                    overflow: hidden;
+
+                    &.line1 {
+                        transform-origin: left;
+                    }
+
+                    &.line2 {
+                        transform-origin: right;
+                    }
+                }
             }
         }
     }
