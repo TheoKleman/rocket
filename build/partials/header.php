@@ -8,7 +8,7 @@
         <!-- TITLE -->
         <title>Rocket - Demo</title>
 
-        <meta name="description" content="Rocket - Another ES6 Starter made to do good shit!" />
+        <meta name="description" content="Rocket - Another ES6 Starter built to do good shit!" />
 
         <!-- FAVICON -->
         <link rel="icon" href="<?php echo $app->baseUrl() ?>img/favicon.png" type="image/png">
