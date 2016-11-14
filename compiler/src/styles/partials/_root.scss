@@ -5,6 +5,13 @@ body {
     font-family: 'Lato', sans-serif;
     color: $light;
     height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+
+    &.loaded {
+        overflow: visible;
+        max-height: auto;
+    }
 
     h1 {
         font-family: 'Geomanist';

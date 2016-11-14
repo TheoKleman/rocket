@@ -7,7 +7,7 @@
 
 # Todo
 
-* Preload images
+* Switch to Wordpress
 * Optimize router and sitemap
-* Switch to Lumen
+* Preload images
 * Do great docs

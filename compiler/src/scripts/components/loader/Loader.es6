@@ -75,6 +75,7 @@ export default class Loader
                 y: - this._wHeight,
                 ease: Power1.easeInOut,
                 onComplete: () => {
+                    $('body').addClass('loaded');
                     if (callback) {
                         this.destroy();
                         callback();
