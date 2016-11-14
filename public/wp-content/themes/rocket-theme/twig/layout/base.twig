@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'twig/partials/head-html.twig' %}
+    <body>
+        <div class="app-border"></div>
+        <div class="app-wrapper"> <!-- do not delete this node -->
+            {% include 'twig/partials/loader.twig' %}
+
+            {% include 'twig/partials/header.twig' %}
+
+            <div class="application-container"> <!-- do not delete this node -->
+                <!-- view -->
+                <div class="page-content"> <!-- do not delete this node -->
+                    {% block content %}
+    				{% endblock %}
+                </div> <!-- do not delete this node (page-content) -->
+                <!-- end view -->
+            </div> <!-- do not delete this node (application-container) -->
+            <div class="c-glsmoke"></div>
+        </div> <!-- do not delete this node (app-wrapper) -->
+        {% include 'twig/partials/footer.twig' %}
+    </body>
+</html>

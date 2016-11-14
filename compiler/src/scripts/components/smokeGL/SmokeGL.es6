@@ -35,7 +35,7 @@ export default class SmokeGL {
 
         // Smoke geometry
         let textureLoader = new THREE.TextureLoader();
-        this._smokeTexture = textureLoader.load('../img/smoke.png')
+        this._smokeTexture = textureLoader.load('img/smoke.png')
         this._smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffba8e, map: this._smokeTexture, transparent: true});
         this._smokeGeometry = new THREE.PlaneGeometry(300,300);
         this._smokeParticles = [];

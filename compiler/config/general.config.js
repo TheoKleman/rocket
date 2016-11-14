@@ -3,13 +3,13 @@ module.exports = {
 	scripts: {
 		entry: 'Main.es6',
 		inputPath: './src/scripts',
-		outputPath: '../build/js',
+		outputPath: '../public/wp-content/themes/rocket-theme/js',
 		outputName: 'main'
 	},
 	styles: {
 		entry: 'main.scss',
 		inputPath: './src/styles',
-		outputPath: '../build/css'
+		outputPath: '../public/wp-content/themes/rocket-theme/css'
 	},
 	browserSync: {
 		proxy: "rocket.js",
