@@ -1,5 +1,5 @@
 .DS_Store
 .localized
 
-build/js/*
-build/css/*
+public/wp-content/themes/rocket-theme/js/*
+public/wp-content/themes/rocket-theme/css/*
