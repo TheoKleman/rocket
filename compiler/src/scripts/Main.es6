@@ -31,7 +31,7 @@ class Main
 		this._router = new Router($('html'), $('body .application-container'));
 
 		// Init SmokeGL
-		this._smokeGL = new SmokeGL($('body .c-glsmoke'))
+		// this._smokeGL = new SmokeGL($('body .c-glsmoke'))
 
 		this._initEvents();
 	}
@@ -45,7 +45,7 @@ class Main
 			this._loader.hide(() => {
 				this._router.currentPage.show();
 				Page.header.show();
-				this._smokeGL.show();
+				// this._smokeGL.show();
 			});
 		})
 	}
@@ -59,7 +59,7 @@ class Main
 	update()
 	{
 		this._router.update();
-		this._smokeGL.update();
+		// this._smokeGL.update();
 	}
 
     // Handlers
@@ -71,7 +71,7 @@ class Main
 	_onResize()
 	{
 		this._router.resize();
-		this._smokeGL.resize();
+		// this._smokeGL.resize();
 	}
 }
 

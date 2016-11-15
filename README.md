@@ -7,7 +7,6 @@
 
 # Todo
 
-* Switch to Wordpress
 * Optimize router and sitemap
 * Preload images
 * Do great docs
