@@ -1,6 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-    {% include 'twig/partials/head-html.twig' %}
+<html data-template-directory-uri={{template_directory_uri}}>
+    <!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+    <!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+    <!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+    <!--[if gt IE 8]><html class="no-js" {{site.language_attributes}}><![endif]-->
+    <head>
+    {% block html_head_container %}
+        {% include 'twig/partials/html-header.twig' %}
+    {% endblock %}
+	</head>
+
     <body>
         <div class="app-border"></div>
         <div class="app-wrapper"> <!-- do not delete this node -->

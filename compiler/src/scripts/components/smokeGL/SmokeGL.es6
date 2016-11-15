@@ -1,3 +1,5 @@
+import Vars from "Vars";
+
 export default class SmokeGL {
     constructor($dom)
     {
@@ -35,7 +37,7 @@ export default class SmokeGL {
 
         // Smoke geometry
         let textureLoader = new THREE.TextureLoader();
-        this._smokeTexture = textureLoader.load('wp-content/themes/rocket-theme/img/smoke.png');
+        this._smokeTexture = textureLoader.load(Vars.dURI + '/img/smoke.png');
         this._smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffba8e, map: this._smokeTexture, transparent: true});
         this._smokeGeometry = new THREE.PlaneGeometry(300,300);
         this._smokeParticles = [];

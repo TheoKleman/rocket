@@ -64,11 +64,11 @@
 	
 	var _SmokeGL2 = _interopRequireDefault(_SmokeGL);
 	
-	var _Page = __webpack_require__(12);
+	var _Page = __webpack_require__(13);
 	
 	var _Page2 = _interopRequireDefault(_Page);
 	
-	var _Router = __webpack_require__(15);
+	var _Router = __webpack_require__(16);
 	
 	var _Router2 = _interopRequireDefault(_Router);
 	
@@ -83,7 +83,7 @@
 			_classCallCheck(this, Main);
 	
 			// sitemap
-			window.sitemap = this._sitemap = __webpack_require__(16);
+			window.sitemap = this._sitemap = __webpack_require__(17);
 			window.THREE = THREE;
 			window.$ = _zeptoModules2.default;
 	
@@ -2861,7 +2861,7 @@
 
 /***/ },
 /* 11 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -2870,6 +2870,12 @@
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _Vars = __webpack_require__(12);
+	
+	var _Vars2 = _interopRequireDefault(_Vars);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -2912,7 +2918,7 @@
 	
 	            // Smoke geometry
 	            var textureLoader = new THREE.TextureLoader();
-	            this._smokeTexture = textureLoader.load('wp-content/themes/rocket-theme/img/smoke.png');
+	            this._smokeTexture = textureLoader.load(_Vars2.default.dURI + '/img/smoke.png');
 	            this._smokeMaterial = new THREE.MeshLambertMaterial({ color: 0xffba8e, map: this._smokeTexture, transparent: true });
 	            this._smokeGeometry = new THREE.PlaneGeometry(300, 300);
 	            this._smokeParticles = [];
@@ -2991,6 +2997,28 @@
 
 /***/ },
 /* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Vars = function Vars() {
+		_classCallCheck(this, Vars);
+	};
+	
+	exports.default = Vars;
+	
+	
+	Vars.TemplateDirectoryUri = document.getElementsByTagName('html')[0].getAttribute('data-template-directory-uri');
+	Vars.dURI = Vars.TemplateDirectoryUri;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3001,7 +3029,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _index = __webpack_require__(13);
+	var _index = __webpack_require__(14);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -3009,7 +3037,7 @@
 	
 	var _TweenMax2 = _interopRequireDefault(_TweenMax);
 	
-	var _Header = __webpack_require__(14);
+	var _Header = __webpack_require__(15);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
@@ -3152,7 +3180,7 @@
 	exports.default = Page;
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -3321,7 +3349,7 @@
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3332,7 +3360,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _index = __webpack_require__(13);
+	var _index = __webpack_require__(14);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -3444,7 +3472,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3455,7 +3483,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _index = __webpack_require__(13);
+	var _index = __webpack_require__(14);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -3667,7 +3695,7 @@
 	exports.default = Router;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3675,10 +3703,10 @@
 	module.exports = {
 		"pages": {
 			"default": {
-				"class": __webpack_require__(12)
+				"class": __webpack_require__(13)
 			},
 			"home": {
-				"class": __webpack_require__(17)
+				"class": __webpack_require__(18)
 			},
 			// "single": {
 			//     "class": require("pages/templates/Single")
@@ -3687,13 +3715,13 @@
 			//     "class": require("pages/templates/Page")
 			// },
 			"page-step-1": {
-				"class": __webpack_require__(18)
+				"class": __webpack_require__(19)
 			}
 		}
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3706,7 +3734,7 @@
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _Page2 = __webpack_require__(12);
+	var _Page2 = __webpack_require__(13);
 	
 	var _Page3 = _interopRequireDefault(_Page2);
 	
@@ -3789,7 +3817,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3802,7 +3830,7 @@
 	
 	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 	
-	var _Page2 = __webpack_require__(12);
+	var _Page2 = __webpack_require__(13);
 	
 	var _Page3 = _interopRequireDefault(_Page2);
 	

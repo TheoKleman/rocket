@@ -34,9 +34,9 @@ class RocketSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
+		$context['template_directory_uri'] = get_template_directory_uri() . '/';
+		$context['site_url'] = rtrim(get_site_url(), '/');
+
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 		return $context;
