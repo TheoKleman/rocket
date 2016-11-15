@@ -3496,12 +3496,10 @@
 	
 	            // Instantiate entry point page
 	            var PageClass = void 0;
-	            var entryPageSlug = window.location.hash != "" ? window.location.href.replace("/" + window.location.hash, "").replace(window.location.hash, "") : window.location.href.split('/')[3];
+	            var entryPageId = $('.page-content').attr('data-id');
 	
-	            if (entryPageSlug === '') entryPageSlug = 'home';
-	
-	            if (window.sitemap.pages[entryPageSlug]) {
-	                PageClass = window.sitemap.pages[entryPageSlug].class;
+	            if (window.sitemap.pages[entryPageId]) {
+	                PageClass = window.sitemap.pages[entryPageId].class;
 	            } else {
 	                PageClass = window.sitemap.pages["default"].class;
 	            }
@@ -3594,7 +3592,7 @@
 	            if (this.couldStateChange) {
 	                var href = e.currentTarget.getAttribute('href');
 	
-	                var link = '/' + href.split('/')[1];
+	                var link = '/' + href.split('/')[3];
 	                var location = window.location.hash != "" ? window.location.href.replace("/" + window.location.hash, "").replace(window.location.hash, "") : window.location.href.split('/')[3];
 	                location = '/' + location;
 	
@@ -3627,10 +3625,10 @@
 	                // Instantiate new page
 	                var PageClass = void 0;
 	
-	                if (newPageSlug === '') newPageSlug = 'home';
+	                var newPageId = _this3._$template.find('.page-content').attr('data-id');
 	
-	                if (window.sitemap.pages[newPageSlug]) {
-	                    PageClass = window.sitemap.pages[newPageSlug].class;
+	                if (window.sitemap.pages[newPageId]) {
+	                    PageClass = window.sitemap.pages[newPageId].class;
 	                } else {
 	                    PageClass = window.sitemap.pages["default"].class;
 	                }
@@ -3680,11 +3678,15 @@
 				"class": __webpack_require__(12)
 			},
 			"home": {
-				"route": "/",
 				"class": __webpack_require__(17)
 			},
-			"about": {
-				"route": "/about",
+			// "single": {
+			//     "class": require("pages/templates/Single")
+			// },
+			// "page": {
+			//     "class": require("pages/templates/Page")
+			// },
+			"page-step-1": {
 				"class": __webpack_require__(18)
 			}
 		}
@@ -3812,22 +3814,22 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var About = function (_Page) {
-	    _inherits(About, _Page);
+	var Step1 = function (_Page) {
+	    _inherits(Step1, _Page);
 	
-	    function About($template, $content) {
-	        _classCallCheck(this, About);
+	    function Step1($template, $content) {
+	        _classCallCheck(this, Step1);
 	
-	        var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, $template, $content));
+	        var _this = _possibleConstructorReturn(this, (Step1.__proto__ || Object.getPrototypeOf(Step1)).call(this, $template, $content));
 	
-	        _this._pageTemplate = "about";
+	        _this._pageTemplate = "step1";
 	        return _this;
 	    }
 	
-	    _createClass(About, [{
+	    _createClass(Step1, [{
 	        key: "init",
 	        value: function init() {
-	            _get(About.prototype.__proto__ || Object.getPrototypeOf(About.prototype), "init", this).call(this);
+	            _get(Step1.prototype.__proto__ || Object.getPrototypeOf(Step1.prototype), "init", this).call(this);
 	
 	            // Some selectors
 	            // this._$profilePicture = this._$TEappContainer.find('#profilePicture');
@@ -3839,23 +3841,23 @@
 	    }, {
 	        key: "_showAnimations",
 	        value: function _showAnimations() {
-	            _get(About.prototype.__proto__ || Object.getPrototypeOf(About.prototype), "_showAnimations", this).call(this);
+	            _get(Step1.prototype.__proto__ || Object.getPrototypeOf(Step1.prototype), "_showAnimations", this).call(this);
 	
 	            // Your custom animations
 	        }
 	    }, {
 	        key: "_hideAnimations",
 	        value: function _hideAnimations(callback) {
-	            _get(About.prototype.__proto__ || Object.getPrototypeOf(About.prototype), "_hideAnimations", this).call(this, callback);
+	            _get(Step1.prototype.__proto__ || Object.getPrototypeOf(Step1.prototype), "_hideAnimations", this).call(this, callback);
 	
 	            // Your custom animations
 	        }
 	    }]);
 	
-	    return About;
+	    return Step1;
 	}(_Page3.default);
 	
-	exports.default = About;
+	exports.default = Step1;
 
 /***/ }
 /******/ ]);

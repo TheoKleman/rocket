@@ -1,12 +1,12 @@
 import Page from "../Page";
 
-export default class About extends Page
+export default class Step1 extends Page
 {
     constructor($template, $content)
     {
         super($template, $content);
 
-        this._pageTemplate = "about";
+        this._pageTemplate = "step1";
     }
 
     init()

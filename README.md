@@ -7,6 +7,6 @@
 
 # Todo
 
-* Optimize router and sitemap
+* gulp improvement + env theme permalink 🙄
 * Preload images
 * Do great docs
