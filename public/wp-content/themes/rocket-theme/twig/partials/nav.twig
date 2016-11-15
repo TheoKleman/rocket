@@ -6,7 +6,16 @@
     </h1>
     <ul>
         {% for item in menu.items %}
-            <li><a href="{{item.link}}">{{item.title}}</a></li>
+            <li>
+                <a
+                    href="{{item.link}}"
+                    {% if item.target %}
+                        target="_blank"
+                    {% endif %}
+                    >
+                    {{item.title}}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 </header>
