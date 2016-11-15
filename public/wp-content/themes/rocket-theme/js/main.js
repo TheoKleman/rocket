@@ -103,7 +103,7 @@
 				this._router = new _Router2.default((0, _zeptoModules2.default)('html'), (0, _zeptoModules2.default)('body .application-container'));
 	
 				// Init SmokeGL
-				// this._smokeGL = new SmokeGL($('body .c-glsmoke'))
+				this._smokeGL = new _SmokeGL2.default((0, _zeptoModules2.default)('body .c-glsmoke'));
 	
 				this._initEvents();
 			}
@@ -119,7 +119,7 @@
 					_this._loader.hide(function () {
 						_this._router.currentPage.show();
 						_Page2.default.header.show();
-						// this._smokeGL.show();
+						_this._smokeGL.show();
 					});
 				});
 			}
@@ -135,7 +135,7 @@
 			key: "update",
 			value: function update() {
 				this._router.update();
-				// this._smokeGL.update();
+				this._smokeGL.update();
 			}
 	
 			// Handlers
@@ -149,7 +149,7 @@
 			key: "_onResize",
 			value: function _onResize() {
 				this._router.resize();
-				// this._smokeGL.resize();
+				this._smokeGL.resize();
 			}
 		}]);
 	
@@ -2912,7 +2912,7 @@
 	
 	            // Smoke geometry
 	            var textureLoader = new THREE.TextureLoader();
-	            this._smokeTexture = textureLoader.load('img/smoke.png');
+	            this._smokeTexture = textureLoader.load('wp-content/themes/rocket-theme/img/smoke.png');
 	            this._smokeMaterial = new THREE.MeshLambertMaterial({ color: 0xffba8e, map: this._smokeTexture, transparent: true });
 	            this._smokeGeometry = new THREE.PlaneGeometry(300, 300);
 	            this._smokeParticles = [];
