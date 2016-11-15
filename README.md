@@ -8,5 +8,6 @@
 # Todo
 
 * gulp improvement + env theme permalink 🙄
+* env vars for DOM nodes which needs to not be deleted
 * Preload images
 * Do great docs
