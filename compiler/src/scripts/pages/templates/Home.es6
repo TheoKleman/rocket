@@ -17,6 +17,7 @@ export default class Home extends Page
         this._$mainTitle = this._$execPHPappContainer.find('#main-title');
         this._$mainTitleLine1 = this._$mainTitle.find('.line1');
         this._$mainTitleLine2 = this._$mainTitle.find('.line2');
+        this._$mainCta = this._$execPHPappContainer.find('#main-cta').find('.c-btn');
 
         // Set tweens
         TweenMax.set(this._$mainTitleLine1, {
@@ -26,6 +27,10 @@ export default class Home extends Page
         TweenMax.set(this._$mainTitleLine2, {
             width: 0,
             x: -20
+        })
+        TweenMax.set(this._$mainCta, {
+            autoAlpha: 0,
+            scale: .98
         })
     }
 
@@ -55,6 +60,13 @@ export default class Home extends Page
                 ease: Power4.easeOut
             }),
             "start+=0.3"
+        )
+        timelime.add(
+            TweenMax.to(this._$mainCta, .3, {
+                autoAlpha: 1,
+                scale: 1,
+                ease: Power2.easeInOut
+            })
         )
     }
 

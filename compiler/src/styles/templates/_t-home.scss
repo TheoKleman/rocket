@@ -4,7 +4,7 @@
             position: relative;
             height: calc(100vh - 120px);
 
-            h1 {
+            #main-title {
                 position: absolute;
                 left: 0;
                 bottom: 10px;
@@ -29,13 +29,13 @@
                     }
                 }
             }
-        }
 
-        &__more {
-            p {
-                max-width: 400px;
-                line-height: 150%;
-                color: $lightAlpha;
+            #main-cta {
+                position: absolute;
+                right: 0;
+                bottom: 25px;
+                width: auto;
+                height: 40px;
             }
         }
     }
