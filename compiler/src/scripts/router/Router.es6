@@ -11,12 +11,17 @@ export default class Router extends Emitter
         this.couldStateChange = true;
 
         // Bind link click
-        $('a:not([target])').on('click', this._onLinkClick.bind(this));
+        this._bindLinks();
 
         this._$html = $html;
         this._$appContainer = $appContainer;
 
         this._init();
+    }
+
+    _bindLinks()
+    {
+        $('a:not([target])').on('click', this._onLinkClick.bind(this));
     }
 
     _init()
@@ -121,13 +126,16 @@ export default class Router extends Emitter
         if (this.couldStateChange) {
             let href = e.currentTarget.getAttribute('href');
 
-            let link = '/' + href.split('/')[3];
+            let link = '/'
+            if (href.split('/')[3])
+                link = '/' + href.split('/')[3];
+
             let location = window.location.hash != "" ? window.location.href.replace("/" + window.location.hash, "").replace(window.location.hash, "") : window.location.href.split('/')[3];
                 location = '/' + location;
 
             // Push into history new state
             if (link != location) {
-                this.history.pushState(null, null, href);
+                this.history.pushState(null, null, link);
                 this._onStateChange();
             }
         }
@@ -170,6 +178,7 @@ export default class Router extends Emitter
                 // Init & show new page
                 this._page.init();
                 this._page.show();
+                this._bindLinks();
                 this._initPageEvents();
                 this.couldStateChange = true;
             });

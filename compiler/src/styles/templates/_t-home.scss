@@ -3,11 +3,14 @@
         &__header {
             position: relative;
             height: calc(100vh - 120px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
 
             #main-title {
-                position: absolute;
-                left: 0;
-                bottom: 10px;
+                // position: absolute;
+                // left: 0;
+                // bottom: 10px;
                 font-size: 80px;
                 line-height: 100px;
                 margin: 0;
@@ -31,11 +34,28 @@
             }
 
             #main-cta {
-                position: absolute;
-                right: 0;
-                bottom: 25px;
+                margin-top: 30px;
+                margin-bottom: 20px;
                 width: auto;
                 height: 40px;
+
+                > a {
+                    padding-left: 25px;
+
+                    > span {
+                        display: inline-block;
+                        vertical-align: top;
+                        height: 40px;
+                        max-height: 40px;
+
+                        > svg {
+                            margin-top: 10px;
+                            margin-left: 5px;
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
             }
         }
     }

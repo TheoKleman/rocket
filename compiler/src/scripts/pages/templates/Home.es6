@@ -29,6 +29,7 @@ export default class Home extends Page
             x: -20
         })
         TweenMax.set(this._$mainCta, {
+            rotation: -3,
             autoAlpha: 0,
             scale: .98
         })
@@ -63,10 +64,12 @@ export default class Home extends Page
         )
         timelime.add(
             TweenMax.to(this._$mainCta, .3, {
+                rotation: 0,
                 autoAlpha: 1,
                 scale: 1,
                 ease: Power2.easeInOut
-            })
+            }),
+            "start+=0.5"
         )
     }
 
