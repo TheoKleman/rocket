@@ -1,0 +1,35 @@
+.c-btn {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    background: $primary;
+    border-radius: 40px;
+    padding: 0 20px;
+    color: $light;
+    transition: all ease .25s;
+    overflow: hidden;
+
+    &:hover {
+        background: $primaryDark;
+        transition: all ease .25s;
+    }
+
+    &.s-no-hover {
+        transition: none;
+
+        &:hover {
+            background: $primary;
+            transition: none;
+        }
+    }
+
+    &.s-no-background {
+        background: transparent;
+        border: 0;
+
+        &:hover {
+            background: transparent;
+            border: 0;
+        }
+    }
+}

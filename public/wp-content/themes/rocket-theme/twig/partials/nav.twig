@@ -1,0 +1,21 @@
+<header class="c-header">
+    <h1>
+        <a href="{{site.url}}">
+            {{site.name}}
+        </a>
+    </h1>
+    <ul>
+        {% for item in menu.items %}
+            <li>
+                <a
+                    href="{{item.link}}"
+                    {% if item.target %}
+                        target="_blank"
+                    {% endif %}
+                    >
+                    {{item.title}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</header>

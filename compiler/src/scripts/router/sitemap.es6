@@ -6,12 +6,16 @@ module.exports =
 			"class": require("pages/Page")
 		},
         "home": {
-            "route": "/",
             "class": require("pages/templates/Home")
         },
-		"about": {
-			"route": "/about",
-			"class": require("pages/templates/About")
+		// "single": {
+        //     "class": require("pages/templates/Single")
+        // },
+		// "page": {
+        //     "class": require("pages/templates/Page")
+        // },
+		"page-step-1": {
+			"class": require("pages/templates/Step1")
 		}
 	}
 };
