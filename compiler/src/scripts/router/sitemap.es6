@@ -14,8 +14,8 @@ module.exports =
 		// "page": {
         //     "class": require("pages/templates/Page")
         // },
-		"page-step-1": {
-			"class": require("pages/templates/Step1")
+		"page-example-page": {
+			"class": require("pages/templates/ExamplePage")
 		}
 	}
 };
