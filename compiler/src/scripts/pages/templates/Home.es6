@@ -47,7 +47,7 @@ export default class Home extends Page
 
         // Main title
         timelime.add(
-            TweenMax.to(this._$mainTitleLine1, .5, {
+            TweenMax.to(this._$mainTitleLine1, .7, {
                 x: 0,
                 width: "100%",
                 ease: Power2.easeInOut
@@ -55,21 +55,21 @@ export default class Home extends Page
             "start"
         )
         timelime.add(
-            TweenMax.to(this._$mainTitleLine2, .7, {
+            TweenMax.to(this._$mainTitleLine2, .9, {
                 x: 0,
                 width: "100%",
                 ease: Power4.easeOut
             }),
-            "start+=0.3"
+            "start+=0.4"
         )
         timelime.add(
-            TweenMax.to(this._$mainCta, .3, {
+            TweenMax.to(this._$mainCta, .4, {
                 rotation: 0,
                 autoAlpha: 1,
                 scale: 1,
                 ease: Power2.easeInOut
             }),
-            "start+=0.5"
+            "start+=0.6"
         )
     }
 
