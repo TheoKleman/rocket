@@ -12,8 +12,10 @@ export default class Header extends Emitter
 
         this._$logo = this._$dom.find('h1');
         this._$li  = this._$dom.find('ul > li');
+        this._$links = this._$li.find('a');
 
         this._init();
+        this._initEvents();
     }
 
     _init()
@@ -22,6 +24,13 @@ export default class Header extends Emitter
             autoAlpha: 0,
             y: -10
         })
+    }
+
+    _initEvents()
+    {
+        this._$links
+            .on('mouseenter', this._onLinksMouseEnter.bind(this))
+            .on('mouseleave', this._onLinksMouseLeave.bind(this));
     }
 
     // Getters & setters
@@ -77,4 +86,30 @@ export default class Header extends Emitter
 
     // Handlers
     //-----------------------------------------------------o
+
+    _onLinksMouseEnter(e)
+    {
+        let $before = $(e.target).find('span.before');
+
+        TweenMax.to($before, .2, {
+            scaleX: 1,
+            ease: Power2.easeInOut,
+            onComplete: () => {
+                $before.css('transform-origin', 'right');
+            }
+        })
+    }
+
+    _onLinksMouseLeave(e)
+    {
+        let $before = $(e.target).find('span.before');
+
+        TweenMax.to($before, .2, {
+            scaleX: 0,
+            ease: Power2.easeInOut,
+            onComplete: () => {
+                $before.css('transform-origin', 'left');
+            }
+        })
+    }
 }

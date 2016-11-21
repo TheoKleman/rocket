@@ -39,8 +39,28 @@
             padding: 0 15px;
 
             > a {
+                position: relative;
                 font-family: 'Geomanist';
                 font-size: 15px;
+                transition: all ease-in-out .2s;
+
+                &:hover {
+                    color: $light;
+                    transition: all ease-in-out .2s;
+                }
+
+                > span.before {
+                    display: block;
+                    position: absolute;
+                    bottom: 8px;
+                    left: -2px;
+                    right: -2px;
+                    width: calc(100% + 4px);
+                    height: 1px;
+                    background: $light;
+                    transform-origin: left;
+                    transform: scaleX(0);
+                }
             }
         }
     }
