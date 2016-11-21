@@ -90,21 +90,32 @@ export default class Header extends Emitter
     _onLinksMouseEnter(e)
     {
         let $before = $(e.target).find('span.before');
+        let timelime = new TimelineMax();
 
-        TweenMax.to($before, .2, {
-            scaleX: 1,
-            ease: Power2.easeInOut,
-            onComplete: () => {
-                $before.css('transform-origin', 'right');
-            }
-        })
+        timelime.add(
+            TweenMax.to($before, .2, {
+                scaleX: 1,
+                ease: Power2.easeInOut,
+                onComplete: () => {
+                    $before.css('transform-origin', 'right');
+                }
+            })
+        )
+        timelime.add(
+            TweenMax.to($before, .2, {
+                scaleX: 0,
+                ease: Power2.easeInOut,
+                onComplete: () => {
+                    $before.css('transform-origin', 'left');
+                }
+            })
+        )
     }
 
     _onLinksMouseLeave(e)
     {
         let $before = $(e.target).find('span.before');
-
-        TweenMax.to($before, .2, {
+        TweenMax.to($before, .1, {
             scaleX: 0,
             ease: Power2.easeInOut,
             onComplete: () => {
