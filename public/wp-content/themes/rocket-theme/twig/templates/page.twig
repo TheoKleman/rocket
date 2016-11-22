@@ -1,0 +1,10 @@
+{% extends "twig/layout/base.twig" %}
+
+{% block content %}
+    <section class="page__header">
+        <h1>{{post.title}}</h1>
+        <p>
+            {{post.content}}
+        </p>
+    </section>
+{% endblock %}
