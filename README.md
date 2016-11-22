@@ -30,8 +30,8 @@ First of all, **clone this repository** into your local `www` folder
 
 To run WordPress you must use
 
-* [PHP](http://www.php.net/) (v5.6 or greater)
-* [MySQL](http://www.mysql.com/) (v5.6 or greater)
+* **[PHP](http://www.php.net/)** (v5.6 or greater)
+* **[MySQL](http://www.mysql.com/)** (v5.6 or greater)
 
 ## 3 - Database
 
