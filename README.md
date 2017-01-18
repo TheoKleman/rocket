@@ -9,11 +9,13 @@
 
 # Demo
 
-> [rocket demonstration](http://rocket.theokleman.com/)
+* [Rocket Demo](http://rocket.theokleman.com/)
 
 Other projects built with Rocket
 
-> [jeannebenichou.com](http://jeannebenichou.com/)
+* [jeannebenichou.com](http://jeannebenichou.com/)
+* ...
+* [submit yours](https://twitter.com/Theo_KlMan)
 
 # Get started - How to test Rocket in local
 
