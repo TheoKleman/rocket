@@ -9,12 +9,11 @@
 
 # Demo
 
-> *Incoming*
+> [rocket demonstration](http://rocket.theokleman.com/)
 
 Other projects built with Rocket
 
 > [jeannebenichou.com](http://jeannebenichou.com/)
-
 
 # Get started - How to test Rocket in local
 
