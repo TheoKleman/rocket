@@ -6,9 +6,8 @@
 
 # Todo
 
-* Header link hover
 * Preload images
-* Do great docs
+* Write best practices docs
 
 # Demo
 
