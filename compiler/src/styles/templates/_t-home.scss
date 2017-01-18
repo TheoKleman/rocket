@@ -59,14 +59,14 @@
                         height: 100%;
                         border-radius: 40px;
                         transform: translate3d(-100%, 0, 0);
-                        transition: all ease .15s;
+                        transition: all ease .25s;
                     }
 
                     &:hover {
                         &:after {
                             top: 0;
                             transform: translate3d(0%, 0, 0);
-                            transition: all ease .15s;
+                            transition: all ease .25s;
                         }
                     }
                 }
