@@ -11,7 +11,7 @@ export default class Router extends Emitter
         this.couldStateChange = true;
 
         // Bind link click
-        this._bindLinks();
+        this.bindLinks();
 
         this._$html = $html;
         this._$appContainer = $appContainer;
@@ -19,7 +19,7 @@ export default class Router extends Emitter
         this._init();
     }
 
-    _bindLinks()
+    bindLinks()
     {
         $('a:not([target])').on('click', this._onLinkClick.bind(this));
     }
@@ -56,7 +56,8 @@ export default class Router extends Emitter
 
     _initPageEvents()
     {
-        this._page.on('updateState', this.updateState.bind(this))
+        this._page
+            .on('updateState', this.updateState.bind(this));
     }
 
     // Methods
@@ -125,16 +126,17 @@ export default class Router extends Emitter
 
         if (this.couldStateChange) {
             let href = e.currentTarget.getAttribute('href');
+            let route = href.split(href.split('/')[2])[1];
 
-            let link = '/'
-            if (href.split('/')[3])
-                link = '/' + href.split('/')[3];
+            let link = '/';
+            if (route)
+                link = route;
 
             let location = window.location.hash != "" ? window.location.href.replace("/" + window.location.hash, "").replace(window.location.hash, "") : window.location.href.split('/')[3];
                 location = '/' + location;
 
             // Push into history new state
-            if (link != location) {
+            if (('/' + link) != location && link != (location + '/') && link != location) {
                 this.history.pushState(null, null, link);
                 this._onStateChange();
             }
@@ -146,7 +148,8 @@ export default class Router extends Emitter
         this.couldStateChange = false;
         this._previousPage = this._page;
 
-        let newPageSlug = window.location.hash != "" ? window.location.href.replace("/" + window.location.hash, "").replace(window.location.hash, "") : window.location.href.split('/')[3];
+        let url = window.location.href;
+        let newPageSlug = url.split(url.split('/')[2])[1];
 
         // Get new template
         this.loadTemplate(newPageSlug).then((response) => {
@@ -176,9 +179,10 @@ export default class Router extends Emitter
 
             this._previousPage.hide(() => {
                 // Init & show new page
+                $(window).scrollTop(0);
                 this._page.init();
                 this._page.show();
-                this._bindLinks();
+                this.bindLinks();
                 this._initPageEvents();
                 this.couldStateChange = true;
             });
