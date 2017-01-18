@@ -13,6 +13,10 @@
 
 > *Incoming*
 
+Other projects built with Rocket
+
+> [jeannebenichou.com](http://jeannebenichou.com/)
+
 
 # Get started - How to test Rocket in local
 
