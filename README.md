@@ -96,3 +96,5 @@ module.exports = {
 ## 5 - Let's get ready to rumble
 
 Simply run `gulp` into `compiler` folder, hope you will enjoy it ! 🚀
+
+> NB : By default, Wordpress back office logs are `admin` / `admin`
