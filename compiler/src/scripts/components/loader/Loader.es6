@@ -1,9 +1,15 @@
-import gsap from "gsap/src/minified/TweenMax.min";
+import Vars from "Vars";
 
-export default class Loader
+import Emitter from "component-emitter/index";
+import gsap from "gsap/src/minified/TweenMax.min";
+import AssetsLoader from "assets-loader/src/index";
+
+export default class Loader extends Emitter
 {
     constructor($dom)
     {
+        super();
+
         this._$dom = $dom;
         this._$rocket = this._$dom.find('.c-loader__content__logo');
         this._$text = this._$dom.find('.c-loader__content__text');
@@ -15,11 +21,32 @@ export default class Loader
     _init()
     {
         this._wHeight = $(window).height();
+
+        this._loadAssets();
     }
 
 
     // Methods
     //-----------------------------------------------------o
+
+    _loadAssets()
+    {
+        let self = this;
+        let dURI = Vars.dURI;
+
+        this._assetsLoader = new AssetsLoader({
+            assets: [
+                dURI + '/img/smoke.png',
+            ]
+        })
+        .on('progress', function(progress) {
+            console.log('%cload assets : ' + (progress * 100).toFixed() + '%', 'color: #7c3fde; font-size: 13px');
+        })
+        .on('complete', function(map) {
+            self.emit('assetsLoaded');
+        })
+        .start();
+    }
 
     hide(callback)
     {

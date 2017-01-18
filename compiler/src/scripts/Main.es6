@@ -16,6 +16,9 @@ class Main
 		window.THREE = THREE;
 		window.$ = $;
 
+        this._assetsLoaded = false;
+        this._firstViewLoaded = false;
+
 		this._init();
 	}
 
@@ -40,15 +43,33 @@ class Main
 	{
 		$(window).on('resize', this._onResize.bind(this));
 
+        // assetsLoaded
+        this._loader.on('assetsLoaded', () => {
+            this._assetsLoaded = true;
+            this._hideLoader();
+
+        })
+
 		// First view loaded
 		this._router.on('firstViewLoaded', () => {
-			this._loader.hide(() => {
+            this._firstViewLoaded = true;
+            this._hideLoader();
+		})
+	}
+
+    // Methods
+	//-----------------------------------------------------o
+
+    _hideLoader()
+    {
+        if (this._assetsLoaded && this._firstViewLoaded) {
+            this._loader.hide(() => {
 				this._router.currentPage.show();
 				Page.header.show();
 				this._smokeGL.show();
 			});
-		})
-	}
+        }
+    }
 
     // Redraw
 	//-----------------------------------------------------o

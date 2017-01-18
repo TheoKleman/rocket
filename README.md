@@ -4,7 +4,7 @@
 
 # Todo
 
-* Preload images
+* Add store/dispatcher
 * Write best practices docs
 
 # Demo
