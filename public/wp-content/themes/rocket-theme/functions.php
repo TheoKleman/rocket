@@ -1,5 +1,11 @@
 <?php
 
+// If you have to register some CPT or ACF please uncomment the following lines
+// and register them into theses files
+
+// require('library/cpt.php');
+// require('library/acf.php');
+
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
 
@@ -23,10 +29,6 @@ class RocketSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
-	}
-
-	function register_post_types() {
-		//this is where you can register custom post types
 	}
 
 	function register_taxonomies() {

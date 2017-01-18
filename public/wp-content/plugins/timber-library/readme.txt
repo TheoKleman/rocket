@@ -2,8 +2,8 @@
 Contributors: jarednova, connorjburton, lggorman
 Tags: template engine, templates, twig
 Requires at least: 3.7
-Stable tag: 1.1.8
-Tested up to: 4.6
+Stable tag: 1.2.1
+Tested up to: 4.7.1
 PHP version: 5.3.0 or greater
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,32 @@ Timber is great for any WordPress developer who cares about writing good, mainta
 
 
 == Changelog ==
+
+= 1.2.0 =
+* Fixed issues with WordPress 4.7
+* Introduced Timber\CommentThread object
+
+= 1.1.12 =
+* Fixed Twig issue with deprecation #1265 (thanks @codesman)!
+* Cleaned-up the warnings for WP.org users and disabled easy updates for major/milestone versions 331314d9aaf90a52ff1c5a213656b8c02a27c60e
+
+= 1.1.11 =
+* Improved flexibility for public query_vars #1250 (thanks @xavivars)
+* Children should inehrit publish state #1255 (thanks @motia)
+* Pages are sorted by their menu order instead of publish order #1251 (thanks @forgandenny)
+* Fixes to object caching #1259
+
+= 1.1.10 =
+* Added support for Co-Authors Plus Guest Authors #1239 (thanks @motia)
+* Fix for Yoast SEO with multisite #1244 (thanks @alexandernanberg)
+* Fixes issues with basedir restrictions that arose in Timber 1.1.9 #1245
+
+= 1.1.9 =
+* Timber now retrieves native term meta info #824
+* Added site icon support in Theme #1210
+* Fixes to menu getting by slug #1237 (thanks @motia)
+* Fix to off-site image URLs! #1234 (thanks @njbarrett)
+* Fix inconsistency with Post::get_terms #1222 (thanks @haroldangenent)
 
 = 1.1.8 =
 * Fixed image generation when images are updated/deleted by WordPress (thanks @dudewithamood)

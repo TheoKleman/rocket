@@ -35,7 +35,7 @@ use Timber\Loader;
  */
 class Timber {
 
-	public static $version = '1.1.8';
+	public static $version = '1.2.1';
 	public static $locations;
 	public static $dirname = 'views';
 	public static $twig_cache = false;
@@ -77,6 +77,9 @@ class Timber {
 		}
 	}
 
+	/**
+	 * @codeCoverageIgnore
+	 */
 	private function backwards_compatibility() {
 		if ( class_exists('TimberArchives') ) {
 			//already run, so bail
@@ -310,12 +313,6 @@ class Timber {
 	 * @return bool|string
 	 */
 	public static function fetch( $filenames, $data = array(), $expires = false, $cache_mode = Loader::CACHE_USE_DEFAULT ) {
-		if ( $expires === true ) {
-			//if this is reading as true; the user probably is using the old $echo param
-			//so we should move all vars up by a spot
-			$expires = $cache_mode;
-			$cache_mode = Loader::CACHE_USE_DEFAULT;
-		}
 		$output = self::compile($filenames, $data, $expires, $cache_mode, true);
 		$output = apply_filters('timber_compile_result', $output);
 		return $output;
@@ -423,7 +420,6 @@ class Timber {
 	/*  Utility
 	================================ */
 
-
 	/**
 	 * Add route.
 	 *
@@ -431,6 +427,7 @@ class Timber {
 	 * @param callable $callback
 	 * @param array   $args
 	 * @deprecated since 0.20.0 and will be removed in 1.1
+	 * @codeCoverageIgnore
 	 */
 	public static function add_route( $route, $callback, $args = array() ) {
 		Helper::warn('Timber::add_route (and accompanying methods for load_view, etc. Have been deprecated and will soon be removed. Please update your theme with Route::map. You can read more in the 1.0 Upgrade Guide: https://github.com/timber/timber/wiki/1.0-Upgrade-Guide');

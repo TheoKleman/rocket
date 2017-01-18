@@ -24,9 +24,8 @@ class URLHelper {
      * Get url scheme
      * @return string
      */
-	public static function get_scheme()
-    {
-        return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+	public static function get_scheme() {
+		return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
     }
 
 
@@ -96,10 +95,10 @@ class URLHelper {
 	 * @return string the HTTP_HOST or SERVER_NAME
 	 */
 	public static function get_host() {
-		if ( isset($_SERVER['HTTP_HOST']) ) {
+		if ( isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] ) {
 			return $_SERVER['HTTP_HOST'];
 		}
-		if ( isset($_SERVER['SERVER_NAME']) ) {
+		if ( isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME']) {
 			return $_SERVER['SERVER_NAME'];
 		}
 		return '';
@@ -287,6 +286,29 @@ class URLHelper {
 	public static function remove_trailing_slash( $link ) {
 		if ( $link != "/" ) {
 			$link = untrailingslashit($link);
+		}
+		return $link;
+	}
+
+	/**
+	 * Pass links through user_trailingslashit handling query strings properly
+	 *
+	 * @param string $link
+	 * @return string
+	 * */
+	public static function user_trailingslashit( $link ) {
+		$link_parts = parse_url($link);
+
+		if ( !$link_parts ) {
+			return $link;
+		}
+		
+		if( isset($link_parts['path']) && $link_parts['path'] != '/' ) {
+			$new_path = user_trailingslashit( $link_parts['path'] );
+			
+			if ( $new_path != $link_parts['path'] )	{
+				$link = str_replace($link_parts['path'], $new_path, $link);
+			}
 		}
 		return $link;
 	}
