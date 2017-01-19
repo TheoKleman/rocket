@@ -2,12 +2,7 @@
 
 **Rocket** is an ES6 starter (compiled with Babel) which is based on **Wordpress CMS**, basically built to do **good shit** 🔥
 
-# Todo
-
-* Add store/dispatcher
-* Write best practices docs
-
-# Demo
+# Live demonstration
 
 * [Rocket Demo](http://rocket.theokleman.com/)
 
@@ -97,3 +92,9 @@ module.exports = {
 Simply run `gulp` into `compiler` folder, hope you will enjoy it ! 🚀
 
 > NB : By default, Wordpress back office logs are `admin` / `admin`
+
+
+# Todo
+
+* Add store/dispatcher
+* Write best practices docs
