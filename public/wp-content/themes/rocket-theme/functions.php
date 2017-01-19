@@ -37,7 +37,6 @@ class RocketSite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['template_directory_uri'] = get_template_directory_uri() . '/';
-		$context['site_url'] = rtrim(get_site_url(), '/');
 
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
