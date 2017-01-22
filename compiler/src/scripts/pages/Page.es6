@@ -5,11 +5,12 @@ import Header from "header/Header";
 
 export default class Page extends Emitter
 {
-    constructor($template, $content)
+    constructor($template, $content, location)
     {
         super();
 
         this._pageTemplate = "default";
+        this._location = location;
         this._isEntryPage = false;
 
         // AJAX response DOM

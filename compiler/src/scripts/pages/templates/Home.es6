@@ -2,9 +2,9 @@ import Page from "../Page";
 
 export default class Home extends Page
 {
-    constructor($template, $content)
+    constructor($template, $content, location)
     {
-        super($template, $content);
+        super($template, $content, location);
 
         this._pageTemplate = "home";
     }

@@ -36,7 +36,7 @@ export default class Router extends Emitter
             PageClass = window.sitemap.pages["default"].class;
         }
 
-        this._page = new PageClass.default(this._$html, this._$appContainer.children());
+        this._page = new PageClass.default(this._$html, this._$appContainer.children(), window.location.href);
         this._page.isEntryPage = true;
         this._page.init();
 
@@ -171,7 +171,7 @@ export default class Router extends Emitter
                 PageClass = window.sitemap.pages["default"].class;
             }
 
-            this._page = new PageClass.default(this._$template, this._$content);
+            this._page = new PageClass.default(this._$template, this._$content, url);
             this.resize();
 
             // Set document title
