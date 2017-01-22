@@ -9,6 +9,7 @@
 Other projects built with Rocket
 
 * [jeannebenichou.com](http://jeannebenichou.com/)
+* [remibonnet.com](http://remibonnet.com/)
 * ...
 * [submit yours](https://twitter.com/Theo_KlMan)
 
