@@ -56,7 +56,7 @@ $ npm install
 
 ### Gulp & Webpack config
 
-⚠️ **You must set the BrowserSync `proxy` value into the Gulp config file by remplacing it by the previously created virtualhost value**
+⚠️ **You must set the BrowserSync `proxy` value into the Gulp config file by remplacing it with the previously created virtualhost value**
 
 ```
 $ cd /path/to/project/compiler/config
