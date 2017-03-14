@@ -1,6 +1,6 @@
 export default class Vars
 {
-	constructor() {}
+  constructor() {}
 }
 
 Vars.TemplateDirectoryUri = document.getElementsByTagName('html')[0].getAttribute('data-template-directory-uri');
