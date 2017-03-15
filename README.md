@@ -88,6 +88,10 @@ module.exports = {
 }
 ```
 
+### ESLint & Editor config
+
+Rocket provides an **ESLinter**, you can set up your own ESLint by editing the `.eslintrc` file
+
 ## 5 - Let's get ready to rumble
 
 Simply run `gulp` into `compiler` folder, hope you will enjoy it ! 🚀
