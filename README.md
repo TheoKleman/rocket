@@ -8,6 +8,7 @@
 
 Other projects built with Rocket
 
+* [juliengd.com](http://juliengd.com/)
 * [jeannebenichou.com](http://jeannebenichou.com/)
 * [remibonnet.com](http://remibonnet.com/)
 * ...
