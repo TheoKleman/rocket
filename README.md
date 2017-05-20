@@ -7,7 +7,7 @@
 * [Rocket Demo](http://rocket.theokleman.com/)
 
 Other projects built with Rocket
-
+* [generationlaicite.com](http://generationlaicite.fr/)
 * [juliengd.com](http://juliengd.com/)
 * [jeannebenichou.com](http://jeannebenichou.com/)
 * [remibonnet.com](http://remibonnet.com/)
