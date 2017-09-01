@@ -8,6 +8,7 @@
 
 Other projects built with Rocket
 * [vitality.gg](https://vitality.gg/)
+* [millenium.team](http://millenium.team)
 * [generationlaicite.com](http://generationlaicite.fr/)
 * [juliengd.com](http://juliengd.com/)
 * [jeannebenichou.com](http://jeannebenichou.com/)
