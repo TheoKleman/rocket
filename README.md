@@ -4,9 +4,7 @@
 
 # Live demonstration
 
-* [Rocket Demo](http://rocket.theokleman.com/)
-
-Other projects built with Rocket
+Projects built with Rocket
 * [vitality.gg](https://vitality.gg/)
 * [millenium.team](http://millenium.team)
 * [generationlaicite.com](http://generationlaicite.fr/)
